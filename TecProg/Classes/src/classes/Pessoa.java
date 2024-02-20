@@ -18,12 +18,23 @@ public class Pessoa {
     
     public String ApresentarFilhos(){
         String resposta = "Meus filhos são ";
+        int qtdFilhoAux = 0;
         
         for(int i = 0; i < 20; i++){
-            resposta = resposta + nomeFilhos[i] + ", ";
-        }
+            // != diferente  == igual
+            if(nomeFilhos[i] !=null){
+                qtdFilhoAux++;
+                resposta = resposta + nomeFilhos[i] + ", ";
+            }
+            
+        if(qtdFilhoAux > 0)
+            return resposta + "Qtd filhos: " + qtdFilhoAux;
+        else
+            return "Não tem filhos! "; 
         
-        return resposta;
+        
         //quando chega no return ele encerra a função
     }
+        return resposta + " qtd de filhos: " + qtdFilhoAux;
 }
+
