@@ -12,6 +12,8 @@ package aula;
 public class vetoresMatrizes {
      public static void main(String[] args) { 
          vetoresMatrizes vM1 = new vetoresMatrizes();
+         
+         
          /* exercicio 1*/
          int[] entrada = new int[]{0,1,2,3,4,5,6,7};
          int[] saida;
@@ -26,11 +28,16 @@ public class vetoresMatrizes {
          System.out.println("Vetor entrada: "+entradaConcatenado);
          System.out.println("Vetor invertido: "+retorno);
         
+         
          /* exercicio 2*/
          vM1.concatenaVetorEmMatriz(new int[]{0,1,2,3,4,5,6,7}, 
                  new int[]{0,1,2,3,4,5,6,7}, new int[]{0,1,2,3,4,5,6,7});
          
          System.out.println("Fim");
+         
+         
+         /* exercicio 3*/
+         
      }
      
     public int[] inverterVetor(int[] vetorEntrada){
