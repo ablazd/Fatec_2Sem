@@ -12,24 +12,41 @@ public class Aula1 {
      */
     public static void main(String[] args) {
         
+        // Código da Aplicação vai aqui dentro
+        
         Pessoa pai;
-        pai = new Pessoa("Rodrigo", "3333");
-        pai.qtdFilhos = 2;
-        pai.qtdIrmaos = 5;
+        pai = new Pessoa("Rodrigo", "333333");
+        pai.nome = "Rodrigo";
+        pai.qntFilhos = 2;
+        pai.qntIrmaos = 4;
         
-        System.out.println(pai.Apresentar());
-        //System.out.println(pai.nome + " possui " + pai.qtdFilhos + " filhos e " + pai.qtdIrmaos + " irmãos. ");
-        System.out.println("CPF pai: "+pai.getCpf());
-        pai.setCpf("0000");
-        System.out.println("CPF pai novo: "+pai.getCpf());
+        System.out.println(pai.Apresentar()
+                + " E possui " + pai.qntIrmaos + " irmãos.");
+        pai.nomesIrmaos[0] =  "José";
+        pai.nomesIrmaos[1] =  "Roberto";
+        pai.nomesIrmaos[2] =  "Cleiton";
+        pai.nomesIrmaos[3] =  "Matheus";
+        System.out.println(pai.ApresentarIrmaos());
         
-        Pessoa mae = new Pessoa("Paula", "4444");
-        mae.qtdFilhos = 2;
+        System.out.println("CPF Pai: " + pai.getCpf());
+        pai.setCpf("666666");
+        System.out.println("Novo CPF Pai: " + pai.getCpf());
         
+        Pessoa mae = new Pessoa("444444");
+        mae.nome = "Paula";
+        mae.qntFilhos = 2;
+        
+        /* para mudar o nome de uma variavel em todos locais,
+        clica com o direito e seleciona refatorar > renomear */
+        
+        // se escrever sout e apertar ctrl ele autocompleta o print
+        
+        System.out.println(mae.Apresentar());
+        // System.out.println(mae.ApresentarFilhos());
+        mae.nomesFilhos[0] = "Maria";
+        mae.nomesFilhos[1] = "João";
         System.out.println(mae.ApresentarFilhos());
-        mae.nomeFilhos[0] = "Maria";
-        mae.nomeFilhos[1] = "João";
-        System.out.println(mae.ApresentarFilhos());
+    }
         
         
         

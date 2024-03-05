@@ -4,11 +4,11 @@ package classes;
 public class Pessoa {
     
     //Atributos da classe
-    private String nome;
-    private int qtdFilhos, qtdIrmaos;
+    String nome;
+    int qtdFilhos, qtdIrmaos;
     String[] nomeFilhos = new String[20];
     //vetores[] são instanciados no inicio e não deve ficar mudando
-    private String cpf;
+    String cpf;
     
     
     /* Método construtor*/
