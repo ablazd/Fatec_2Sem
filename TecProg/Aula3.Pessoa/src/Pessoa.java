@@ -9,14 +9,21 @@ public class Pessoa {
     private Pessoa pai;
     private Pessoa[] listaFilhos = new Pessoa[10];
     private int qtdFilhos = 0;
+    private Pessoa[] listaIrmaos = new Pessoa[10];
+    private int qtdIrmaos = 0;
     /************************************/
     
-    //Construtor
+    
 
     /**
      *
      * @param nome
      */
+    
+    //Métodos da classe
+    
+    //Construtores da classe
+    
     public Pessoa(String nome){
         this.nome = nome;
         
@@ -26,6 +33,7 @@ public class Pessoa {
         //this.nome = nome;
         this(nome);
         this.mae = mae;
+        mae.addFilho(this);
     }
     
     public Pessoa(String nome, Pessoa mae, Pessoa pai){
@@ -37,6 +45,7 @@ public class Pessoa {
     /************************************/
     
     //  Métodos de acesso aos atributos  //
+    
     /*            Método Get            */
     public String getNome(){
         return this.nome;
@@ -59,16 +68,52 @@ public class Pessoa {
     public Pessoa[] getListaFilhos(){
         return listaFilhos;
     }
+    
     /*           Método Set            */
     public void setNome(String nome){
         this.nome = nome;
     }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+    public void setMae(Pessoa mae) {
+        this.mae = mae;
+    }
+    public void setPai(Pessoa pai) {
+        this.pai = pai;
+    }
+    
+    
     /************************************/
     
     //Método para adicionar um filho a lista
     public void addFilho(Pessoa filho){
-        listaFilhos[qtdFilhos] = filho;
-        qtdFilhos ++;
+    /*Verificar se na lista de filhos tem o objeto antes de adicioná-lo*/
+        boolean encontrei = false;
+        for(int i=0; i< qtdFilhos; i++){
+            // equals compara objetos inteiros
+           if(filho.equals(listaFilhos[i])){ 
+               encontrei=true;
+           }
+           if(encontrei==false){
+               listaFilhos[qtdFilhos] = filho;
+               qtdFilhos ++;
+           }
+        }
+        
+        
+    }
+    
+    public void addImaos(Pessoa irmao){
+        listaFilhos[qtdIrmaos] = irmao;
+        qtdIrmaos ++;
+        this.mae.addFilho(irmao);
         
     }
     
