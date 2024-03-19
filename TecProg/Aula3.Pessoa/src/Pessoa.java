@@ -125,9 +125,14 @@ public class Pessoa {
             filhos = filhos+listaFilhos[i].getNome();
             if (i<qtdFilhos-1)filhos+= ", ";
             else filhos += ".";
-            
-            
         }
         return filhos;  
     }
+    
+    //Método arvore genealogica, retorna a mãe
+    public String ArvoreGenealogica(){
+        if (mae == null) return this.nome;
+        else return mae.ArvoreGenealogica()+"->"+ this.nome;
+    }
+    
 }
