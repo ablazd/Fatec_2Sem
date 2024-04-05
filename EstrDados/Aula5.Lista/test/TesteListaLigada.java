@@ -4,15 +4,15 @@ import static org.junit.Assert.*;
 
 public class TesteListaLigada {
     
-    /*@Test
+    @Test
     public void testeCriacaodeNos(){
         Object info = "Ana";
         No proximoNo = null;
         No meuPrimeiroNo = new No(info, proximoNo);
         assertEquals("Ana", meuPrimeiroNo.getInfo());
-    }*/
+    }
     
-    @Test
+    /*@Test
     public void testeCriacaoLista(){
         
         ListaLigada minhaLista = new ListaLigada();
@@ -24,7 +24,22 @@ public class TesteListaLigada {
             assertEquals("Ana", minhaLista.get(0)); 
             assertEquals("Eduarda", minhaLista.get(1)); 
             assertEquals("Rodrigo", minhaLista.get(1));
+    }*/
+    
+    @Test
+    public void testAdd() {
+        ListaLigada minhaLista = new ListaLigada();
+        
+        minhaLista.add("Ana");
+        minhaLista.add("Eduarda");
+        minhaLista.add("Rodrigo", 1);
+
+        assertEquals("Ana", minhaLista.get(0));
+        assertEquals("Rodrigo", minhaLista.get(1));
+        assertEquals("Eduarda", minhaLista.get(2));
+        assertEquals(3, minhaLista.getTamanhoLista());
     }
+    
     
     
 }

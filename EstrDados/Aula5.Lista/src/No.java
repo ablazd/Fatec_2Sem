@@ -1,16 +1,15 @@
 
 public class No {
-    
+
     private Object info;
     private No proximoNo;
-    
-    //metodo construtor
+
     public No(Object info, No proximoNo) {
-        this.info = info;
-        this.proximoNo = proximoNo;
+        this.info=info;
+        this.proximoNo=proximoNo;
     }
     
-    // Método get
+    //metodo get
     public Object getInfo() {
         return info;
     }
@@ -18,14 +17,14 @@ public class No {
     public No getProximoNo() {
         return proximoNo;
     }
-
-    // Método set
+    
+    //metodo set
     public void setInfo(Object info) {
         this.info = info;
     }
-    
-    public void setProximoNo(No proximoNo){
+
+    public void setProximoNo(No proximoNo) {
         this.proximoNo = proximoNo;
     }
-    
+
 }
