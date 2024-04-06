@@ -22,6 +22,7 @@ public class ListaLigada {
             // Para os demais nós
             ultimoNo.setProximoNo(aux);
             tamanhoLista++;
+            ultimoNo = aux;
         }
     }
     public void add(Object elemento, int indice){
@@ -107,9 +108,9 @@ public class ListaLigada {
     }
     public String concatenaNos(){
         /*Retorna o Info de todos os Nós concatenados*/
-        String concatena = "Lista de nos: \n";
+        String concatena = "Lista de nos: ";
         for (int i = 0; i < tamanhoLista; i++ ) {
-            concatena += get(i) + "\n";
+            concatena += get(i);
         }
 
         return concatena;
